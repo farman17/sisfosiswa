@@ -1,0 +1,53 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: siswa-service
+  namespace: production
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  #type: LoadBalancer
+  selector:
+    app: crudsiswa
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: siswa-deployment
+  namespace: production
+spec:
+  selector:
+    matchLabels:
+      app: crudsiswa
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: crudsiswa
+    spec:
+      containers:
+      - name: php-siswa
+        image: farman17/kelasapp
+        ports:
+          - containerPort: 80
+        
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: siswa-ingress
+  namespace: production
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: kelas.dailybugis.my.id
+    http:
+      paths:
+      #- path: /
+      - backend:
+          serviceName: siswa-service
+          servicePort: 80
+
