@@ -1,7 +1,7 @@
 <?php 
 
 function base_url($path = null){
-	$base_url = "http://kelas.dailybugis.my.id/";
+	$base_url = "http://3.131.93.170/";
 	if($path == null){
 		return $base_url;
 	} else {
