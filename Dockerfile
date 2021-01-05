@@ -1,5 +1,7 @@
+FROM php:7.2-apache
 
-FROM nginx:alpine
+RUN docker-php-ext-install pdo pdo_mysql mysqli
 
-COPY . /usr/share/nginx/html/
+WORKDIR /var/www/html
 
+COPY . /var/www/html/ 
