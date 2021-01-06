@@ -48,7 +48,7 @@ $guru = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT COUNT(guru_pengampu) A
 		<!-- Begin Page Content -->
 		<div class="container-fluid">
 		<!-- Page Heading -->
-		<h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
+		<h1 class="h3 mb-4 text-gray-800">Sistem Informasi SMK Harapan Bangsa</h1>
 		<hr>
 		<?php if (check_flash_message('sukses')): ?>
 	        <div class="alert alert-success alert-dismissible fade show" role="alert">
