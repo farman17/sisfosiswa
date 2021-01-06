@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: php-siswa
-        image: farman17/kelasapp
+        image: farman17/aplikasi-siswa
         ports:
           - containerPort: 80
         
