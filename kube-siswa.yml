@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: php-siswa
-        image: farman17/aplikasi-siswa
+        image: farman17/aplikasi-sekolah
         ports:
           - containerPort: 80
         
